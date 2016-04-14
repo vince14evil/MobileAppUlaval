@@ -6,9 +6,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class PrizeView extends AppCompatActivity {
 
     private PrizeAdapter mPrizeAdapter;
@@ -20,21 +17,14 @@ public class PrizeView extends AppCompatActivity {
 
         mPrizeAdapter = new PrizeAdapter(getApplicationContext());
 
+        PrizeManager.getInstance().earnNextPrize();
+
         CreateStudentAdapter();
         InitListView();
         InitAdpaterData();
     }
 
     private void InitAdpaterData() {
-        List<Prize> myList = new ArrayList<>();
-        myList.add(new Prize("Free Beer", "You can drink a beer with you friend!"));
-        myList.add(new Prize("10% on a drink", "Choose waht you want to get drunk"));
-        myList.add(new Prize("Free Shooter", "1.. 2.. 3.. SHOT!"));
-        myList.add(new Prize("25% on a poutine", "If you are hungry..."));
-        myList.add(new Prize("Free fries", "Because everyone love fries"));
-        for (int i=0;i<myList.size();i++){
-            mPrizeAdapter.add(myList.get(i));
-        }
         mPrizeAdapter.notifyDataSetChanged();
     }
 

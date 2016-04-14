@@ -28,6 +28,7 @@ public class Prize implements Parcelable {
     public String GetName(){return mName;}
     public String GetDescription(){return mDescription;}
     public Boolean GetIsEarned(){return mEarned;}
+    public void earn(){mEarned = true;}
 
     public static final Parcelable.Creator<Prize> CREATOR
             = new Parcelable.Creator<Prize>() {

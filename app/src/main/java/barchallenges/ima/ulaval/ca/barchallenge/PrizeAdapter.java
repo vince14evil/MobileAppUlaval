@@ -1,10 +1,12 @@
 package barchallenges.ima.ulaval.ca.barchallenge;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -26,19 +28,14 @@ public class PrizeAdapter extends BaseAdapter {
         mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    public void add(Prize pStudent)
-    {
-        mPrizeList.add(pStudent);
-    }
-
     @Override
     public int getCount() {
-        return mPrizeList.size();
+        return PrizeManager.getInstance().getPrizeCount();
     }
 
     @Override
     public Object getItem(int position) {
-        return mPrizeList.get(position);
+        return PrizeManager.getInstance().getPrizeAt(position);
     }
 
     @Override
@@ -56,12 +53,23 @@ public class PrizeAdapter extends BaseAdapter {
             mHolder = (ViewHolder)convertView.getTag();
         }
 
+        Prize prize = PrizeManager.getInstance().getPrizeAt(position);
+
+        LinearLayout layout = (LinearLayout)convertView.findViewById(R.id.prizeCell);
+
+        if(prize.GetIsEarned())
+        {
+            layout.setBackgroundColor(Color.GREEN);
+        }else {
+            layout.setBackgroundColor(Color.RED);
+        }
+
         mHolder.TitleTextView = (TextView)convertView.findViewById(R.id.cellTitle);
         mHolder.TitleTextView.setText("Prize #" + (position + 1) + " : ");
         mHolder.NameTextView = (TextView)convertView.findViewById(R.id.cellName);
-        mHolder.NameTextView.setText(mPrizeList.get(position).GetName());
+        mHolder.NameTextView.setText(prize.GetName());
         mHolder.ShordDescriptionTextView = (TextView)convertView.findViewById(R.id.cellDescription);
-        mHolder.ShordDescriptionTextView.setText(mPrizeList.get(position).GetDescription());
+        mHolder.ShordDescriptionTextView.setText(prize.GetDescription());
 
         return convertView;
     }
