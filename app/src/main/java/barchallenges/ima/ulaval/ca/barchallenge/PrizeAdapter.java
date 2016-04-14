@@ -10,58 +10,59 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class PrizeAdapter extends BaseAdapter {
-
-
     private LayoutInflater mInflater = null;
-    private ArrayList<Price> mPriceList;
+    private ArrayList<Prize> mPrizeList;
 
     private final class ViewHolder {
-        TextView nameTextView;
-        TextView DescriptionTextView;
+        TextView TitleTextView;
+        TextView NameTextView;
+        TextView ShordDescriptionTextView;
     }
 
     private ViewHolder mHolder = null;
 
     public PrizeAdapter(Context context) {
-        mPriceList = new ArrayList<>();
+        mPrizeList = new ArrayList<>();
         mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    public void add(Price pStudent)
+    public void add(Prize pStudent)
     {
-        mPriceList.add(pStudent);
+        mPrizeList.add(pStudent);
     }
 
     @Override
     public int getCount() {
-        return mPriceList.size();
+        return mPrizeList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return mPriceList.get(position);
+        return mPrizeList.get(position);
     }
+
     @Override
     public long getItemId(int position) {
         return position;
     }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        /*if(convertView == null) {
+        if(convertView == null) {
             mHolder = new ViewHolder();
-            convertView = mInflater.inflate(R.layout.student_cell, null);
+            convertView = mInflater.inflate(R.layout.prize_cell, null);
             convertView.setTag(mHolder);
         } else {
             mHolder = (ViewHolder)convertView.getTag();
         }
 
-        mHolder.nameTextView = (TextView)convertView.findViewById(R.id.cellName);
-        mHolder.nameTextView.setText(mPriceList.get(position).getFirstName() + " " + studentList.get(position).getLastName());
-        mHolder.programTextView = (TextView)convertView.findViewById(R.id.cellProgram);
-        mHolder.programTextView.setText("   " + mPriceList.get(position).getDepartment().toString());
-        mHolder.yearsTextView = (TextView)convertView.findViewById(R.id.cellYears);
-        mHolder.yearsTextView.setText("Années d’université: " + studentList.get(position).getYearOfUniversity());
-*/
+        mHolder.TitleTextView = (TextView)convertView.findViewById(R.id.cellTitle);
+        mHolder.TitleTextView.setText("Prize #" + (position + 1) + " : ");
+        mHolder.NameTextView = (TextView)convertView.findViewById(R.id.cellName);
+        mHolder.NameTextView.setText(mPrizeList.get(position).GetName());
+        mHolder.ShordDescriptionTextView = (TextView)convertView.findViewById(R.id.cellDescription);
+        mHolder.ShordDescriptionTextView.setText(mPrizeList.get(position).GetDescription());
+
         return convertView;
     }
 }
