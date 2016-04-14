@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class PriceAdapter extends BaseAdapter {
+public class PrizeAdapter extends BaseAdapter {
 
 
     private LayoutInflater mInflater = null;
@@ -22,7 +22,7 @@ public class PriceAdapter extends BaseAdapter {
 
     private ViewHolder mHolder = null;
 
-    public PriceAdapter(Context context) {
+    public PrizeAdapter(Context context) {
         mPriceList = new ArrayList<>();
         mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }

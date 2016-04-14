@@ -3,11 +3,13 @@ package barchallenges.ima.ulaval.ca.barchallenge;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class PriceView extends AppCompatActivity {
+public class PrizeView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_price_view);
+        setContentView(R.layout.activity_prize_view);
+
+
     }
 }
