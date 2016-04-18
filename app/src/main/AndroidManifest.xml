@@ -15,7 +15,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PrizeView"></activity>
+        <activity android:name=".PrizeView" />
+        <activity
+            android:name=".Challenge2Activity"
+            android:label="@string/title_activity_challenge2"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
