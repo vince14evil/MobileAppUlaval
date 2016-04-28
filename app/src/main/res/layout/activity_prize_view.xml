@@ -16,7 +16,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Liste des prix"
         android:id="@+id/textView3"
-        style="@style/Title"
         android:textColor="#ffffff" />
 
     <ListView
@@ -24,4 +23,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/studentList"
         android:layout_below="@+id/textView3"/>
+
+    <include layout="@layout/toolbar"/>
 </RelativeLayout>
