@@ -69,6 +69,8 @@ public class HttpCustomRequest {
 		return this.mHeaders;
 	}
 
+    public void setHeaders(List<Pair<String,String>> headers) {this.mHeaders = headers;}
+
 	private String getQueryParmeters() throws UnsupportedEncodingException
 	{
 
