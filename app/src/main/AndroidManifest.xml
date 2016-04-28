@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-feature android:name="android.hardware.Camera2"
+        android:required="true" />
 
     <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -28,7 +30,9 @@
             android:label="@string/title_activity_challenge2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".PrizeDescription" />
-        <activity android:name=".SelfieChallengeActivity"></activity>
+        <activity android:name=".SelfieChallengeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+        </activity>
     </application>
 
 </manifest>

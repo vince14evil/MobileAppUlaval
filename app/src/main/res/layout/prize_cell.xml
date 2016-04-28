@@ -3,16 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ffffff"
+    android:background="#252525"
     android:foreground="#ffffff"
     android:id="@+id/prizeCell">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/cellDescription"
+        android:foreground="#000000"
+        android:layout_below="@+id/firstRow"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="top|left"
-        android:id="@+id/firstRow"
-        >
+        android:id="@+id/firstRow">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,12 +36,5 @@
             android:foreground="#000000"
             android:id="@+id/cellName"/>
     </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/cellDescription"
-        android:foreground="#000000"
-        android:layout_below="@+id/firstRow"/>
+
 </LinearLayout>
