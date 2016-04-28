@@ -4,6 +4,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Prize implements Parcelable {
+    public static final String EXTRA_NAME = "Prize";
+
     private String mName;
     private String mDescription;
     private boolean mEarned;

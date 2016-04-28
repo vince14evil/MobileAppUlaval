@@ -1,5 +1,6 @@
 package barchallenges.ima.ulaval.ca.barchallenge;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -45,10 +46,10 @@ public class PrizeView extends AppCompatActivity {
         });
     }
 
-    private void NavigateToDescription(Prize pStudent)
+    private void NavigateToDescription(Prize pPrize)
     {
-        /*Intent intent = new Intent(getBaseContext(), .class);
-        intent.putExtra("Student", pStudent);
-        startActivity(intent);*/
+        Intent intent = new Intent(getBaseContext(), PrizeDescription.class);
+        intent.putExtra(Prize.EXTRA_NAME, pPrize);
+        startActivity(intent);
     }
 }
