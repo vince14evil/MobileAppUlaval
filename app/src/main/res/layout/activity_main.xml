@@ -55,4 +55,5 @@
         android:layout_below="@+id/buttonChallenge2"
         android:layout_centerHorizontal="true" />
 
+    <include layout="@layout/toolbar"/>
 </RelativeLayout>
