@@ -27,7 +27,8 @@
             android:name=".Challenge2Activity"
             android:label="@string/title_activity_challenge2"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".PrizeDescription"></activity>
+        <activity android:name=".PrizeDescription" />
+        <activity android:name=".SelfieChallengeActivity"></activity>
     </application>
 
 </manifest>

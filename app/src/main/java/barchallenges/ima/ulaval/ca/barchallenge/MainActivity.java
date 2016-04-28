@@ -22,11 +22,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        SetupSelfieChallengeBouton();
+
         Button btnChallenge2 = (Button)findViewById(R.id.buttonChallenge2);
         btnChallenge2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent addEntryIntent = new Intent(getApplicationContext(), Challenge2Activity.class);
+                startActivity(addEntryIntent);
+            }
+        });
+    }
+
+    private void SetupSelfieChallengeBouton()
+    {
+        findViewById(R.id.buttonChallenge1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addEntryIntent = new Intent(getApplicationContext(), SelfieChallengeActivity.class);
                 startActivity(addEntryIntent);
             }
         });
