@@ -101,4 +101,19 @@ public class PrizeManager {
 
         editor.apply();
     }
+
+    public void reinitializePrizes(Context pContext)
+    {
+        SharedPreferences.Editor editor = pContext.getSharedPreferences("IMA_PREF", pContext.MODE_PRIVATE).edit();
+
+        for (int i = 0; i< mPrizeList.size();i++) {
+            Prize prize = mPrizeList.get(i);
+            prize.setEarned(false);
+            prize.setIsUsed(false);
+            editor.putBoolean("Prize" + prize.getId() + "Earned", false);
+            editor.putBoolean("Prize" + prize.getId() + "Used", false);
+        }
+
+        editor.apply();
+    }
 }

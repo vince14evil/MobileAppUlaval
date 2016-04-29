@@ -30,8 +30,8 @@
                 android:layout_height="60dp"
                 android:id="@+id/toolbarChallenge"
                 android:background="@drawable/house"
-                android:onClick="onHomeClick"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/colorPrimaryDark"/>
             <ImageButton
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -39,6 +39,7 @@
                 android:background="@drawable/setting"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
+                android:onClick="onSettingClick"
                 android:layout_marginLeft="55dp"/>
         </android.support.v7.widget.LinearLayoutCompat>
     </android.support.v7.widget.Toolbar>

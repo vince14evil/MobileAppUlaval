@@ -5,6 +5,7 @@ import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -20,6 +21,8 @@ public class SelfieChallengeActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selfie_challenge);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         findViewById(R.id.photoSelfieLayout).setVisibility(View.INVISIBLE);
 
@@ -59,5 +62,16 @@ public class SelfieChallengeActivity extends ActionBarActivity {
         PrizeManager.getInstance().earnNextPrize(getApplicationContext());
         Intent addEntryIntent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(addEntryIntent);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

@@ -56,13 +56,13 @@ public class PrizeView extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onPrizeClick(View view) {
-        Intent addEntryIntent = new Intent(getApplicationContext(), PrizeView.class);
+    public void onHomeClick(View view) {
+        Intent addEntryIntent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(addEntryIntent);
     }
 
-    public void onHomeClick(View view) {
-        Intent addEntryIntent = new Intent(getApplicationContext(), MainActivity.class);
+    public void onSettingClick(View view) {
+        Intent addEntryIntent = new Intent(getApplicationContext(), SettingActivity.class);
         startActivity(addEntryIntent);
     }
 }

@@ -28,5 +28,5 @@
         android:layout_below="@+id/buttonChallenge1"
         android:layout_centerHorizontal="true" />
 
-    <include layout="@layout/toolbar"/>
+    <include layout="@layout/toolbar_main"/>
 </RelativeLayout>

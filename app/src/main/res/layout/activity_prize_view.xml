@@ -12,5 +12,5 @@
         android:id="@+id/studentList"
         android:layout_below="@+id/textView3"/>
 
-    <include layout="@layout/toolbar"/>
+    <include layout="@layout/toolbar_prize"/>
 </RelativeLayout>

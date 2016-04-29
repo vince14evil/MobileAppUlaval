@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.util.Pair;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,6 +33,8 @@ public class Challenge2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge2);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Button btn = (Button)findViewById(R.id.button);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +53,7 @@ public class Challenge2Activity extends AppCompatActivity {
         String urlToLoad= Util.getFormatedLoveCalcURL(getApplicationContext(), "?fname=" + fname + "&sname=" + sname);
         HttpCustomRequest request = new HttpCustomRequest(this,urlToLoad);
         List<Pair<String,String>> headers = new Vector<Pair<String, String>>();
-        headers.add(new Pair("X-Mashape-Key","9gYvUwB5aemshxrDD3CaqXBhUArPp1alKhejsnkQQ73h2tlAMT"));
+        headers.add(new Pair("X-Mashape-Key", "9gYvUwB5aemshxrDD3CaqXBhUArPp1alKhejsnkQQ73h2tlAMT"));
         headers.add(new Pair("Accept", "application/json"));
         request.setHeaders(headers);
         ASyncURLRequest loadRequest = new ASyncURLRequest(){
@@ -101,6 +104,17 @@ public class Challenge2Activity extends AppCompatActivity {
                 PrizeManager.getInstance().earnNextPrize(getApplicationContext());
             }
             mPrizeWon = true;
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }
