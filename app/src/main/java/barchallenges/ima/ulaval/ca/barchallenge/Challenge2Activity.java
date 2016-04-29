@@ -1,6 +1,7 @@
 package barchallenges.ima.ulaval.ca.barchallenge;
 
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.util.Pair;
@@ -20,7 +21,7 @@ import util.ASyncURLRequest;
 import util.HttpCustomRequest;
 import util.Util;
 
-public class Challenge2Activity extends AppCompatActivity {
+public class Challenge2Activity extends ActionBarActivity {
     private String mFName;
     private String mSName;
     private int mPercentage = 0;
@@ -36,6 +37,14 @@ public class Challenge2Activity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Button btn = (Button)findViewById(R.id.button);
+
+        TextView textViewPercentage = (TextView)findViewById(R.id.percentage);
+        textViewPercentage.setText("");
+        TextView textViewResult = (TextView)findViewById(R.id.result);
+        textViewResult.setText("");
+        TextView textViewPrize = (TextView)findViewById(R.id.textPrize);
+        textViewPrize.setText("");
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,7 +100,7 @@ public class Challenge2Activity extends AppCompatActivity {
         TextView textViewSname = (TextView)findViewById(R.id.sNameText);
         textViewSname.setText(mSName);
         TextView textViewPercentage = (TextView)findViewById(R.id.percentage);
-        textViewPercentage.setText(String.valueOf(mPercentage));
+        textViewPercentage.setText(String.valueOf(mPercentage + "%"));
         TextView textViewResult = (TextView)findViewById(R.id.result);
         textViewResult.setText(mResult);
     }
