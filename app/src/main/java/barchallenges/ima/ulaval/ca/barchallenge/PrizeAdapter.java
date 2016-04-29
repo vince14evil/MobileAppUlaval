@@ -1,12 +1,10 @@
 package barchallenges.ima.ulaval.ca.barchallenge;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -54,17 +52,7 @@ public class PrizeAdapter extends BaseAdapter {
         }
 
         Prize prize = PrizeManager.getInstance().getPrizeAt(position);
-        LinearLayout layout = (LinearLayout)convertView.findViewById(R.id.prizeCell);
 
-        if(prize.getIsEarned())
-        {
-            layout.setBackgroundColor(Color.GREEN);
-        }else {
-            layout.setBackgroundColor(Color.RED);
-        }
-
-        mHolder.TitleTextView = (TextView)convertView.findViewById(R.id.cellTitle);
-        mHolder.TitleTextView.setText("Prize #" + (position + 1) + " : ");
         mHolder.NameTextView = (TextView)convertView.findViewById(R.id.cellName);
         mHolder.NameTextView.setText(prize.getName());
         mHolder.ShordDescriptionTextView = (TextView)convertView.findViewById(R.id.cellDescription);
