@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setupToolbar();
         setupChallenge2Button();
         setupSelfieChallengeBouton();
+        PrizeManager.getInstance().updateData(getApplicationContext());
     }
 
     private void setupToolbar()

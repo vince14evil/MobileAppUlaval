@@ -1,5 +1,8 @@
 package barchallenges.ima.ulaval.ca.barchallenge;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import java.util.ArrayList;
 
 /**
@@ -24,16 +27,28 @@ public class PrizeManager {
         generateMockData();
     }
 
-    private void generateMockData()
+    public void updateData(Context pContext)
     {
-        mPrizeList.add(new Prize("Free Beer", "You can drink a beer with you friend!"));
-        mPrizeList.add(new Prize("10% on a drink", "Choose waht you want to get drunk"));
-        mPrizeList.add(new Prize("Free Shooter", "1.. 2.. 3.. SHOT!"));
-        mPrizeList.add(new Prize("25% on a poutine", "If you are hungry..."));
-        mPrizeList.add(new Prize("Free fries", "Because everyone love fries"));
+        SharedPreferences pref = pContext.getSharedPreferences("IMA_PREF", pContext.MODE_PRIVATE);
+
+        for (int i = 0; i< mPrizeList.size();i++) {
+            Prize prize = mPrizeList.get(i);
+            prize.setEarned(pref.getBoolean("Prize" + prize.getId() + "Earned", prize.getIsEarned()));
+            prize.setIsUsed(pref.getBoolean("Prize" + prize.getId() + "Used", prize.getIsUsed()));
+        }
+
     }
 
-    public void earnNextPrize()
+    private void generateMockData()
+    {
+        mPrizeList.add(new Prize(1, "Free Beer", "You can drink a beer with you friend!"));
+        mPrizeList.add(new Prize(2, "10% on a drink", "Choose waht you want to get drunk"));
+        mPrizeList.add(new Prize(3, "Free Shooter", "1.. 2.. 3.. SHOT!"));
+        mPrizeList.add(new Prize(4, "25% on a poutine", "If you are hungry..."));
+        mPrizeList.add(new Prize(5, "Free fries", "Because everyone love fries"));
+    }
+
+    public void earnNextPrize(Context pContext)
     {
         for (int i = 0; i< mPrizeList.size();i++){
             if(!mPrizeList.get(i).getIsEarned())
@@ -42,6 +57,7 @@ public class PrizeManager {
                 break;
             }
         }
+        savePrizes(pContext);
     }
 
     public Prize getPrizeAt(int pPosition)
@@ -61,7 +77,7 @@ public class PrizeManager {
         return mPrizeList.size();
     }
 
-    public void usePrize(Prize pPrize)
+    public void usePrize(Prize pPrize, Context pContext)
     {
         for (int i = 0; i< mPrizeList.size();i++) {
             if(mPrizeList.get(i).getName().equals(pPrize.getName())) {
@@ -69,5 +85,20 @@ public class PrizeManager {
                 break;
             }
         }
+
+        savePrizes(pContext);
+    }
+
+    public void savePrizes(Context pContext)
+    {
+        SharedPreferences.Editor editor = pContext.getSharedPreferences("IMA_PREF", pContext.MODE_PRIVATE).edit();
+
+        for (int i = 0; i< mPrizeList.size();i++) {
+            Prize prize = mPrizeList.get(i);
+            editor.putBoolean("Prize" + prize.getId() + "Earned", prize.getIsEarned());
+            editor.putBoolean("Prize" + prize.getId() + "Used", prize.getIsUsed());
+        }
+
+        editor.apply();
     }
 }

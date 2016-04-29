@@ -56,7 +56,7 @@ public class SelfieChallengeActivity extends ActionBarActivity {
 
     public void onSubmitClick(View view)
     {
-        PrizeManager.getInstance().earnNextPrize();
+        PrizeManager.getInstance().earnNextPrize(getApplicationContext());
         Intent addEntryIntent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(addEntryIntent);
     }
