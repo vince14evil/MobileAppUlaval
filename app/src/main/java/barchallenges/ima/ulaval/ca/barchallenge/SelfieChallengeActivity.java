@@ -21,6 +21,8 @@ public class SelfieChallengeActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selfie_challenge);
 
+        findViewById(R.id.photoSelfieLayout).setVisibility(View.INVISIBLE);
+
         mTakePhotoBtn = (Button) findViewById(R.id.TakePhotoBtn);
         mTakePhotoBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -42,9 +44,20 @@ public class SelfieChallengeActivity extends ActionBarActivity {
     @Override
     protected void onActivityResult (int requestCode, int resultCode, Intent data){
        if(requestCode==TAKE_PHOTO_INTENT && resultCode==RESULT_OK){
+
+           findViewById(R.id.infoSelfieLayout).setVisibility(View.INVISIBLE);
+           findViewById(R.id.photoSelfieLayout).setVisibility(View.VISIBLE);
+
            mPhoto = (Bitmap) data.getExtras().get("data");
            ImageView imageView = (ImageView) findViewById(R.id.upload_image_preview);
            imageView.setImageBitmap(mPhoto);
         }
+    }
+
+    public void OnSubmitClick(View view)
+    {
+        PrizeManager.getInstance().earnNextPrize();
+        Intent addEntryIntent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(addEntryIntent);
     }
 }

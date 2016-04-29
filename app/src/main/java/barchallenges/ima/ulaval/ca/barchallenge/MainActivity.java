@@ -42,15 +42,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onPrizeClick(View view) {
-
         Intent addEntryIntent = new Intent(getApplicationContext(), PrizeView.class);
         startActivity(addEntryIntent);
-
     }
 
     public void onHomeClick(View view) {
         Intent addEntryIntent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(addEntryIntent);
-
     }
 }

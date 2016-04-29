@@ -30,6 +30,7 @@
                 android:layout_height="60dp"
                 android:id="@+id/toolbarChallenge"
                 android:background="@drawable/house"
+                android:onClick="onHomeClick"
                 android:layout_centerHorizontal="true" />
             <ImageButton
                 android:layout_width="60dp"

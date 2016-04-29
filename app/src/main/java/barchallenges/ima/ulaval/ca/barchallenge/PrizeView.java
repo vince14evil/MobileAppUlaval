@@ -23,8 +23,6 @@ public class PrizeView extends AppCompatActivity {
 
         mPrizeAdapter = new PrizeAdapter(getApplicationContext());
 
-        PrizeManager.getInstance().earnNextPrize();
-
         CreateStudentAdapter();
         InitListView();
         InitAdpaterData();
@@ -56,5 +54,15 @@ public class PrizeView extends AppCompatActivity {
         Intent intent = new Intent(getBaseContext(), PrizeDescription.class);
         intent.putExtra(Prize.EXTRA_NAME, pPrize);
         startActivity(intent);
+    }
+
+    public void onPrizeClick(View view) {
+        Intent addEntryIntent = new Intent(getApplicationContext(), PrizeView.class);
+        startActivity(addEntryIntent);
+    }
+
+    public void onHomeClick(View view) {
+        Intent addEntryIntent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(addEntryIntent);
     }
 }
