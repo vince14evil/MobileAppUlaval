@@ -60,4 +60,14 @@ public class PrizeManager {
     {
         return mPrizeList.size();
     }
+
+    public void usePrize(Prize pPrize)
+    {
+        for (int i = 0; i< mPrizeList.size();i++) {
+            if(mPrizeList.get(i).getName().equals(pPrize.getName())) {
+                mPrizeList.get(i).useIt();
+                break;
+            }
+        }
+    }
 }

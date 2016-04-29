@@ -32,9 +32,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Use it!"
-        android:id="@+id/button2"
+        android:id="@+id/btnUsePrize"
         android:layout_below="@+id/PrizeDescription"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="48dp"
         android:onClick="onUseClick" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/textPrizeError"
+        android:layout_alignTop="@+id/btnUsePrize"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"/>
 </RelativeLayout>

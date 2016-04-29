@@ -19,11 +19,31 @@ public class PrizeDescription extends AppCompatActivity {
 
         ((TextView) findViewById(R.id.PrizeTitle)).setText(mPrize.getName());
         ((TextView) findViewById(R.id.PrizeDescription)).setText(mPrize.getDescription());
+
+        if(!mPrize.getIsEarned())
+        {
+            findViewById(R.id.btnUsePrize).setVisibility(View.INVISIBLE);
+            TextView errorText = ((TextView)findViewById(R.id.textPrizeError));
+            errorText.setVisibility(View.VISIBLE);
+            errorText.setText("Le prix n'est pas débloqué.");
+        }
+        else if(mPrize.getIsUsed())
+        {
+            findViewById(R.id.btnUsePrize).setVisibility(View.INVISIBLE);
+            TextView errorText = ((TextView)findViewById(R.id.textPrizeError));
+            errorText.setVisibility(View.VISIBLE);
+            errorText.setText("Le prix a déjà été utilisé.");
+        }
+        else
+        {
+            findViewById(R.id.btnUsePrize).setVisibility(View.VISIBLE);
+            findViewById(R.id.textPrizeError).setVisibility(View.INVISIBLE);
+        }
     }
 
     public void onUseClick(View pView)
     {
-        mPrize.useIt();
+        PrizeManager.getInstance().usePrize(mPrize);
         Intent intent = new Intent(getBaseContext(), PrizeView.class);
         startActivity(intent);
     }
