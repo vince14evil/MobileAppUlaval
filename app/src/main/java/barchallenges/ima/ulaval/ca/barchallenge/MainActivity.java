@@ -18,15 +18,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbarTop);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        Button btnPrize = (Button)findViewById(R.id.buttonPrize);
-        btnPrize.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent addEntryIntent = new Intent(getApplicationContext(), PrizeView.class);
-                startActivity(addEntryIntent);
-            }
-        });
-
         SetupSelfieChallengeBouton();
 
         Button btnChallenge2 = (Button)findViewById(R.id.buttonChallenge2);
@@ -48,5 +39,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(addEntryIntent);
             }
         });
+    }
+
+    public void onPrizeClick(View view) {
+
+        Intent addEntryIntent = new Intent(getApplicationContext(), PrizeView.class);
+        startActivity(addEntryIntent);
+
+    }
+
+    public void onHomeClick(View view) {
+        Intent addEntryIntent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(addEntryIntent);
+
     }
 }
