@@ -36,7 +36,7 @@ public class PrizeManager {
     public void earnNextPrize()
     {
         for (int i = 0; i< mPrizeList.size();i++){
-            if(!mPrizeList.get(i).GetIsEarned())
+            if(!mPrizeList.get(i).getIsEarned())
             {
                 mPrizeList.get(i).earn();
                 break;

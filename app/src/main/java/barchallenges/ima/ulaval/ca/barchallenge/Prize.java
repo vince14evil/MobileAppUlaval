@@ -30,11 +30,13 @@ public class Prize implements Parcelable {
         mIsUsed = false;
     }
 
-    public String GetName(){return mName;}
-    public String GetDescription(){return mDescription;}
-    public Boolean GetIsEarned(){return mEarned;}
+    public String getName(){return mName;}
+    public String getDescription(){return mDescription;}
+
+    public Boolean getIsEarned(){return mEarned;}
     public void earn(){mEarned = true;}
-    public Boolean GetIsUsed(){return mIsUsed;}
+
+    public Boolean getIsUsed(){return mIsUsed;}
     public void useIt(){mIsUsed = true;}
 
     public static final Parcelable.Creator<Prize> CREATOR

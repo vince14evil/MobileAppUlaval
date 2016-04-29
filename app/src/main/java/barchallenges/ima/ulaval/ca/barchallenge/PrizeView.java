@@ -23,33 +23,33 @@ public class PrizeView extends AppCompatActivity {
 
         mPrizeAdapter = new PrizeAdapter(getApplicationContext());
 
-        CreateStudentAdapter();
-        InitListView();
-        InitAdpaterData();
+        createStudentAdapter();
+        initListView();
+        initAdpaterData();
     }
 
-    private void InitAdpaterData() {
+    private void initAdpaterData() {
         mPrizeAdapter.notifyDataSetChanged();
     }
 
-    private void CreateStudentAdapter()
+    private void createStudentAdapter()
     {
         mPrizeAdapter = new PrizeAdapter(getApplicationContext());
     }
 
-    private void InitListView()
+    private void initListView()
     {
         ListView studentList = (ListView) findViewById(R.id.studentList);
         studentList.setAdapter(mPrizeAdapter);
         studentList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-                NavigateToDescription((Prize) mPrizeAdapter.getItem(position));
+                navigateToDescription((Prize) mPrizeAdapter.getItem(position));
             }
         });
     }
 
-    private void NavigateToDescription(Prize pPrize)
+    private void navigateToDescription(Prize pPrize)
     {
         Intent intent = new Intent(getBaseContext(), PrizeDescription.class);
         intent.putExtra(Prize.EXTRA_NAME, pPrize);

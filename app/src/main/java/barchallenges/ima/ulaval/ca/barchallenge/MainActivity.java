@@ -14,12 +14,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setupToolbar();
+        setupChallenge2Button();
+        setupSelfieChallengeBouton();
+    }
+
+    private void setupToolbar()
+    {
         Toolbar toolbarTop = (Toolbar) findViewById(R.id.toolbar_bottom);
         setSupportActionBar(toolbarTop);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+    }
 
-        SetupSelfieChallengeBouton();
-
+    private void setupChallenge2Button()
+    {
         Button btnChallenge2 = (Button)findViewById(R.id.buttonChallenge2);
         btnChallenge2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void SetupSelfieChallengeBouton()
+    private void setupSelfieChallengeBouton()
     {
         findViewById(R.id.buttonChallenge1).setOnClickListener(new View.OnClickListener() {
             @Override

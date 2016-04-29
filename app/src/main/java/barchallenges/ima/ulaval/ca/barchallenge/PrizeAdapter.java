@@ -54,10 +54,9 @@ public class PrizeAdapter extends BaseAdapter {
         }
 
         Prize prize = PrizeManager.getInstance().getPrizeAt(position);
-
         LinearLayout layout = (LinearLayout)convertView.findViewById(R.id.prizeCell);
 
-        if(prize.GetIsEarned())
+        if(prize.getIsEarned())
         {
             layout.setBackgroundColor(Color.GREEN);
         }else {
@@ -67,9 +66,9 @@ public class PrizeAdapter extends BaseAdapter {
         mHolder.TitleTextView = (TextView)convertView.findViewById(R.id.cellTitle);
         mHolder.TitleTextView.setText("Prize #" + (position + 1) + " : ");
         mHolder.NameTextView = (TextView)convertView.findViewById(R.id.cellName);
-        mHolder.NameTextView.setText(prize.GetName());
+        mHolder.NameTextView.setText(prize.getName());
         mHolder.ShordDescriptionTextView = (TextView)convertView.findViewById(R.id.cellDescription);
-        mHolder.ShordDescriptionTextView.setText(prize.GetDescription());
+        mHolder.ShordDescriptionTextView.setText(prize.getDescription());
 
         return convertView;
     }

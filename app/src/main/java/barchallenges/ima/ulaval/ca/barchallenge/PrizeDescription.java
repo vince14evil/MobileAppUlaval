@@ -17,11 +17,11 @@ public class PrizeDescription extends AppCompatActivity {
 
         mPrize = getIntent().getParcelableExtra(Prize.EXTRA_NAME);
 
-        ((TextView) findViewById(R.id.PrizeTitle)).setText(mPrize.GetName());
-        ((TextView) findViewById(R.id.PrizeDescription)).setText(mPrize.GetDescription());
+        ((TextView) findViewById(R.id.PrizeTitle)).setText(mPrize.getName());
+        ((TextView) findViewById(R.id.PrizeDescription)).setText(mPrize.getDescription());
     }
 
-    public void OnUseClick(View pView)
+    public void onUseClick(View pView)
     {
         mPrize.useIt();
         Intent intent = new Intent(getBaseContext(), PrizeView.class);
