@@ -9,6 +9,7 @@ public class Prize implements Parcelable {
     private String mName;
     private String mDescription;
     private boolean mEarned;
+    private boolean mIsUsed;
 
     public int describeContents() {
         return 0;
@@ -18,6 +19,7 @@ public class Prize implements Parcelable {
         out.writeString(mName);
         out.writeString(mDescription);
         out.writeSerializable(mEarned);
+        out.writeSerializable(mIsUsed);
     }
 
     public Prize(String pName, String pDescription)
@@ -25,12 +27,15 @@ public class Prize implements Parcelable {
         mName = pName;
         mDescription = pDescription;
         mEarned = false;
+        mIsUsed = false;
     }
 
     public String GetName(){return mName;}
     public String GetDescription(){return mDescription;}
     public Boolean GetIsEarned(){return mEarned;}
     public void earn(){mEarned = true;}
+    public Boolean GetIsUsed(){return mIsUsed;}
+    public void useIt(){mIsUsed = true;}
 
     public static final Parcelable.Creator<Prize> CREATOR
             = new Parcelable.Creator<Prize>() {
@@ -48,5 +53,6 @@ public class Prize implements Parcelable {
         mName = in.readString();
         mDescription = in.readString();
         mEarned = (Boolean) in.readSerializable();
+        mIsUsed = (Boolean) in.readSerializable();
     }
 }

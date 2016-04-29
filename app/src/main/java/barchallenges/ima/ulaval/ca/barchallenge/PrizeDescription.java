@@ -23,8 +23,8 @@ public class PrizeDescription extends AppCompatActivity {
 
     public void OnUseClick(View pView)
     {
+        mPrize.useIt();
         Intent intent = new Intent(getBaseContext(), PrizeView.class);
         startActivity(intent);
-
     }
 }
