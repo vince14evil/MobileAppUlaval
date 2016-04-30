@@ -41,11 +41,11 @@ public class PrizeManager {
 
     private void generateMockData()
     {
-        mPrizeList.add(new Prize(1, "Free Beer", "You can drink a beer with you friend!"));
-        mPrizeList.add(new Prize(2, "10% on a drink", "Choose waht you want to get drunk"));
-        mPrizeList.add(new Prize(3, "Free Shooter", "1.. 2.. 3.. SHOT!"));
-        mPrizeList.add(new Prize(4, "25% on a poutine", "If you are hungry..."));
-        mPrizeList.add(new Prize(5, "Free fries", "Because everyone love fries"));
+        mPrizeList.add(new Prize(1, "Bière gratuite", "Tu peux boire une bonne bière avec tes amis!"));
+        mPrizeList.add(new Prize(2, "10% sur un verre", "Choisi ce que tu veux!"));
+        mPrizeList.add(new Prize(3, "Shooter gratuit", "1.. 2.. 3.. SHOT!"));
+        mPrizeList.add(new Prize(4, "25% sur une poutine", "Si tu as faim..."));
+        mPrizeList.add(new Prize(5, "Frites gratuites", "Car nous avons tous faim."));
     }
 
     public void earnNextPrize(Context pContext)
