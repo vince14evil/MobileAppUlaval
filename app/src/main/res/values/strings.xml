@@ -3,5 +3,7 @@
     <string name="title_activity_challenge2">Challenge2Activity</string>
     <string name="LOVECALCULATOR_BASE">https://love-calculator.p.mashape.com/</string>
     <string name="LOVECALCULATOR_FORMAT">/getPercentage</string>
+    <string name="EMAIL_BASE">https://community-neutrino-email-validate.p.mashape.com/</string>
+    <string name="EMAIL_FORMAT">/email-validate</string>
     <string name="title_activity_main2">Main2Activity</string>
 </resources>

@@ -23,6 +23,9 @@
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".Challenge_liste"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".PrizeView"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

@@ -56,13 +56,24 @@ public class PrizeView extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onHomeClick(View view) {
-        Intent addEntryIntent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(addEntryIntent);
+    public void surPrixButtonOnClick(View v) {
+
+        Intent i=new Intent(this, PrizeView.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(i);
     }
 
-    public void onSettingClick(View view) {
-        Intent addEntryIntent = new Intent(getApplicationContext(), SettingActivity.class);
-        startActivity(addEntryIntent);
+    public void surMenuButtonOnClick(View v) {
+
+        Intent i=new Intent(this, Challenge_liste.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(i);
+    }
+
+    public void surOptionButtonOnClick(View v) {
+
+        Intent i=new Intent(this, SettingActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(i);
     }
 }

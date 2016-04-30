@@ -57,11 +57,11 @@ public class SelfieChallengeActivity extends ActionBarActivity {
         }
     }
 
-    public void onSubmitClick(View view)
-    {
-        PrizeManager.getInstance().earnNextPrize(getApplicationContext());
-        Intent addEntryIntent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(addEntryIntent);
+    public void SummitButtonOnClick(View v) {
+
+        Intent i=new Intent(this, Challenge_liste.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(i);
     }
 
     @Override

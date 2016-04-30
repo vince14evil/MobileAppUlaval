@@ -4,11 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#252525"
-    android:id="@+id/prizeCell">
+    android:id="@+id/prizeCell"
+    android:weightSum="1">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="72dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,13 +26,13 @@
             android:text="Large Text2"
             android:id="@+id/cellName"
             android:textColor="#ffffff" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:src="@drawable/barre"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/cellbar"/>
 
 </LinearLayout>
