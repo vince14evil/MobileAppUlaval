@@ -59,6 +59,7 @@ public class SelfieChallengeActivity extends ActionBarActivity {
 
     public void SummitButtonOnClick(View v) {
 
+        PrizeManager.getInstance().earnNextPrize(getApplicationContext());
         Intent i=new Intent(this, Challenge_liste.class);
         i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(i);
